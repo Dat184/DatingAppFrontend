@@ -1,11 +1,11 @@
 import Hero from '../components/home/Hero';
 import Introduction from '../components/home/Introduction';
-import Testimonials from '../components/home/Testimonials';
-import CTA from '../components/home/CTA';
 import { useEffect } from 'react';
 import ScrollingBanner from '../components/home/ScrollingBanner';
 import Features from '../components/home/Features';
 import Steps from '../components/home/Steps';
+import Contact from '../components/home/Contact';
+import Tittle from '../components/home/Tittle';
 
 const Home = () => {
   useEffect(() => {
@@ -19,8 +19,8 @@ const Home = () => {
       <ScrollingBanner />
       <Features />
       <Steps />
-      <Testimonials />
-      <CTA />
+      <Contact />
+      <Tittle />
     </>
   );
 };
