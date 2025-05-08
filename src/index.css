@@ -3,34 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Dosis-SemiBold";
-  src: url("./assets/font/Dosis-SemiBold.ttf") format("truetype");
+  font-family: "MJ Glamour Coquette";
+  src: url("./assets/font/MJ-GlamourCoquette-Regular-d1nqrd.ttf")
+    format("truetype");
 }
 
-@font-face {
-  font-family: "OpenSans-Bold";
-  src: url("./assets/font/OpenSans-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "OpenSans-Light";
-  src: url("./assets/font/OpenSans-Light.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "OpenSans-Regular";
-  src: url("./assets/font/OpenSans-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins-SemiBold";
-  src: url("./assets/font/Poppins-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "TAN-PEARL";
-  src: url("@/assets/font/TAN-PEARL.ttf") format("truetype");
-}
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -40,7 +17,9 @@
     @apply font-sans text-gray-800 bg-gray-50;
   }
 
-  h1,
+  h1 {
+    @apply font-MJ;
+  }
   h2,
   h3,
   h4,

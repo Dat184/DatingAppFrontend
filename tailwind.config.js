@@ -6,9 +6,7 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
         serif: ['"Playfair Display"', "serif"],
-        dosis: ["Dosis", "sans-serif"],
-        opensans: ["OpenSans", "sans-serif"],
-        tanpearl: ["TAN-PEARL", "serif"],
+        MJ: ["MJ Glamour Coquette", "sans-serif"],
       },
       colors: {
         lavender: {
