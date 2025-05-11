@@ -1,17 +1,17 @@
-import { Routes, Route } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
-import Layout from './components/layout/Layout';
-import LoadingSpinner from './components/ui/LoadingSpinner';
-import { AuthProvider } from './contexts/AuthContext';
+import { Routes, Route } from "react-router-dom";
+import { Suspense, lazy } from "react";
+import Layout from "./components/layout/Layout";
+import LoadingSpinner from "./components/ui/LoadingSpinner";
+import { AuthProvider } from "./contexts/AuthContext";
 
 // Lazy load pages for better performance
-const Home = lazy(() => import('./pages/Home'));
-const Community = lazy(() => import('./pages/Community'));
-const MyPlans = lazy(() => import('./pages/MyPlans'));
-const Contact = lazy(() => import('./pages/Contact'));
-const Login = lazy(() => import('./pages/Login'));
-const Register = lazy(() => import('./pages/Register'));
-const NotFound = lazy(() => import('./pages/NotFound'));
+const Home = lazy(() => import("./pages/Home"));
+const Community = lazy(() => import("./pages/community/Community"));
+const MyPlans = lazy(() => import("./pages/MyPlans"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
   return (
