@@ -8,6 +8,12 @@
     format("truetype");
 }
 
+@font-face {
+  font-family: "Neue Einstellung";
+  src: url("./assets/font/Hanken-Design-Co-Neue-Einstellung-Medium.otf")
+    format("truetype");
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

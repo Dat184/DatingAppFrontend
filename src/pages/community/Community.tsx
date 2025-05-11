@@ -1,7 +1,5 @@
-import React from "react";
-import Hero from "../../components/home/Hero";
-import Header from "./components/header";
-import Slide from "./components/slide";
+import Header from "./components/Header";
+import Slide from "./components/Slide";
 
 const Community = () => {
   return (
