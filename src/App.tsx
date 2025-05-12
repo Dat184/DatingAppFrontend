@@ -9,7 +9,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Community = lazy(() => import("./pages/community/Community"));
 const MyPlans = lazy(() => import("./pages/MyPlans/MyPlans"));
 // const Contact = lazy(() => import("./pages/Contact"));
-// const Login = lazy(() => import("./pages/Login"));
+const Login = lazy(() => import("./pages/Login"));
 // const Register = lazy(() => import("./pages/Register"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -23,7 +23,7 @@ function App() {
             <Route path="/cong-dong" element={<Community />} />
             <Route path="/ke-hoach-cua-toi" element={<MyPlans />} />
             {/* <Route path="/lien-he" element={<Contact />} /> */}
-            {/* <Route path="/dang-nhap" element={<Login />} /> */}
+            <Route path="/dang-nhap" element={<Login />} />
             {/* <Route path="/dang-ky" element={<Register />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
