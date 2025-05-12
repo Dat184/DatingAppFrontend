@@ -1,14 +1,17 @@
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 
 interface NavbarProps {
   isScrolled: boolean;
 }
 
 const Navbar = ({ isScrolled }: NavbarProps) => {
+  const location = useLocation()
+
+  const isMyPlansPage = location.pathname === "/ke-hoach-cua-toi";
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#455038] shadow-md' : 'bg-transparent'
+      className={`fixed w-full z-50 transition-all duration-300 ${isMyPlansPage || isScrolled ? 'bg-[#455038] shadow-md' : 'bg-transparent'
         }`}
     >
       <div className=" mx-auto border-b">

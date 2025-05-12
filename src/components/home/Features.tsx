@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import Bg_Feature from '../../assets/img/Bg_Feature.png';
+import Bg_Feature from '../../assets/img/Bg_Feature2.png';
 import Feature_1 from '../../assets/img/Feature_1.jpg';
 import Feature_2 from '../../assets/img/Feature_2.jpg';
 import Feature_3 from '../../assets/img/Feature_3.jpg';
@@ -35,7 +35,8 @@ const Features = () => {
               key={index}
               className="relative group cursor-pointer p-8 transition-all duration-500 border-x"
               style={{
-                backgroundImage: hoveredIndex === index ? `url(${feature.bgHover})` : 'none',
+
+                backgroundImage: hoveredIndex === index ? `linear-gradient(rgba(255, 255, 255, 0.8)), url(${feature.bgHover})` : 'none',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -50,9 +51,8 @@ const Features = () => {
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className={`w-[450px] h-[527px] object-cover border border-x transition-all duration-500 ${
-                    hoveredIndex === index ? 'rounded-[100%]' : 'rounded-2xl'
-                  }`}
+                  className={`w-[450px] h-[527px] object-cover border border-x transition-all duration-500 ${hoveredIndex === index ? 'rounded-[100%]' : 'rounded-2xl'
+                    }`}
                 />
               </div>
               <h2 className="text-[30px] font-serif leading-relaxed transition-colors duration-500 text-[#815C80]">

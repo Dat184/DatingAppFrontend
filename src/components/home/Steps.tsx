@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import ArrowLeft from '../../assets/img/arrow_left_white.png'
 import ArrowRight from '../../assets/img/arrow_right_white.png'
+import BgStep1 from '../../assets/img/Bg_Step1.jpg'
+import BgStep2 from '../../assets/img/Bg_Step2.jpg'
+import BgStep3 from '../../assets/img/Bg_Step3.jpg'
 
 const Steps = () => {
     const [activeStep, setActiveStep] = useState(1);
@@ -12,21 +15,21 @@ const Steps = () => {
             number: '1.',
             title: 'Tìm kiếm ý tưởng',
             description: 'từ các bài đăng trong mục "Cộng đồng" hoặc AI, từ đó lên kế hoạch hẹn hò thật hoàn hảo',
-            image: 'https://images.pexels.com/photos/6231991/pexels-photo-6231991.jpeg',
+            image: BgStep1,
             buttonText: 'Tìm kiếm ngay'
         },
         {
             number: '2.',
             title: 'Tạo kế hoạch hẹn hò',
             description: 'và bắt đầu viết lên 1 lịch trình đã được lên kế hoạch kĩ lưỡng',
-            image: 'https://images.pexels.com/photos/5759191/pexels-photo-5759191.jpeg',
+            image: BgStep2,
             buttonText: 'Tạo ngay'
         },
         {
             number: '3.',
             title: 'Thực hiện kế hoạch',
             description: 'đã được chuẩn bị và tận hưởng những khoảnh khắc tuyệt vời',
-            image: 'https://images.pexels.com/photos/5759097/pexels-photo-5759097.jpeg',
+            image: BgStep3,
             buttonText: 'Bắt đầu ngay'
         }
     ];

@@ -9,7 +9,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center" 
         style={{
-          backgroundImage: `linear-gradient( rgba(215, 198, 227, 0.4)) , url(${BgHome})`,
+          backgroundImage: `linear-gradient(rgba(215, 198, 227, 0.4)), url(${BgHome})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
