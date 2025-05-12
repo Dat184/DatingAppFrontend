@@ -61,7 +61,7 @@ const Content = (props: ContentProps) => {
         }}
       >
         <div className="absolute bottom-0 left-0 right-0 py-[0.35rem] px-[1rem] text-white backdrop-blur-md flex justify-between">
-          <div>
+          <div className="w-4/5">
             <h2 className="text-2xl font-thin mb-2">{headerContent}</h2>
             <div className="text-base font-thin">
               <p>
@@ -86,7 +86,7 @@ const Content = (props: ContentProps) => {
             </div>
           </div>
 
-          <div className="flex flex-row items-center justify-center gap-2  ">
+          <div className="flex flex-row items-center justify-center gap-2 ">
             <p className="text-base font-thin">24 người đã lưu</p>
             <button
               className="text-[35px] font-thin"

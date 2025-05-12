@@ -86,8 +86,7 @@ const Slide = () => {
           location="Bình Dương"
           date="04/05/2025"
           headerContent="Sài Gòn và mình tui..."
-          
-        ></Content>
+        />
         <Content
           showFullContent={showFullContent}
           setShowFullContent={setShowFullContent}
@@ -97,7 +96,7 @@ const Slide = () => {
           location="Bình Dương"
           date="04/05/2025"
           headerContent="Sài Gòn và mình tui..."
-        ></Content>
+        />
       </div>
     </section>
   );
