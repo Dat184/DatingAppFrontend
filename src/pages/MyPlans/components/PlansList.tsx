@@ -15,7 +15,7 @@ const PlansList: React.FC<PlansListProps> = ({ plans }) => {
   return (
     <div className="py-6 px-8">
       <h2 className=" text-2xl font-normal mb-6">Kế hoạch của tôi</h2>
-      <div className="mx-48 grid justify-items-center grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="mx-auto max-w-[1280px] flex flex-wrap justify-center gap-6">
         {plans.map((plan, index) => (
           <div
             key={index}

@@ -25,6 +25,13 @@ const MyPlans = () => {
         "Mong rằng lịch trình này sẽ khiến cậu vui và hạnh phúc khi ở Vũng Tàu",
       author: "Qnhu nè",
     },
+    {
+      date: "24/05/2025",
+      title: "Lịch trình Vũng Tàu nè!",
+      description:
+        "Mong rằng lịch trình này sẽ khiến cậu vui và hạnh phúc khi ở Vũng Tàu",
+      author: "Qnhu nè",
+    },
     // ... thêm kế hoạch khác
   ];
 

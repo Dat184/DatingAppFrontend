@@ -1,6 +1,5 @@
 import { ReactNode, useEffect, useState } from 'react';
 import Navbar from './Navbar';
-import Footer from './Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface LayoutProps {
@@ -33,7 +32,6 @@ const Layout = ({ children }: LayoutProps) => {
           {children}
         </motion.main>
       </AnimatePresence>
-      <Footer />
     </div>
   );
 };

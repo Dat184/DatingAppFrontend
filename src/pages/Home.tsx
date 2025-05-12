@@ -6,6 +6,7 @@ import Features from '../components/home/Features';
 import Steps from '../components/home/Steps';
 import Contact from '../components/home/Contact';
 import Tittle from '../components/home/Tittle';
+import Footer from '../components/home/Footer';
 
 const Home = () => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const Home = () => {
       <Steps />
       <Contact />
       <Tittle />
+      <Footer />
     </>
   );
 };
