@@ -1,10 +1,7 @@
-import BgSlide from "../../../assets/img/Bg_Slide.png";
+import BgFeature from "../../../assets/img/Bg_Feature.png";
 import img from "../../../assets/img/img_slide_community.jpg";
-import {
-  MdOutlineLocationOn,
-  MdOutlineCalendarMonth,
-  MdOutlinePerson,
-} from "react-icons/md";
+
+import { MdOutlineLocationOn } from "react-icons/md";
 import DropdownMenu, {
   DropdownOption,
 } from "../../../components/ui/DropdownMenu";
@@ -21,7 +18,6 @@ const Slide = () => {
   // Định nghĩa nội dung đầy đủ của bài viết
   const fullContent =
     "Tháng 5, Sài Gòn mưa rào, mình cùng nhau đi dạo phố. Những cơn mưa đầu mùa làm không khí dịu mát. Chúng tôi ghé vào một quán cà phê nhỏ trên đường Nguyễn Huệ, nơi có những chiếc ghế gỗ cũ kỹ và những tách cà phê thơm nồng. Tiếng mưa rơi trên mái tôn tạo nên một bản nhạc êm đềm, hòa quyện với tiếng cười nói rộn ràng.";
-
 
   // Định nghĩa các tùy chọn cho dropdown đầu tiên với icon location
   const locationOptions: DropdownOption[] = [
@@ -54,7 +50,7 @@ const Slide = () => {
       <div
         className="bg-cover bg-center w-full relative flex flex-col items-center justify-center py-12"
         style={{
-          backgroundImage: `url(${BgSlide})`,
+          backgroundImage: `url(${BgFeature})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "repeat",
