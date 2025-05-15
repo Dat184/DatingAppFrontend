@@ -3,6 +3,8 @@ import PlansList from "./components/PlansList";
 import NoPlans from "./components/NoPlans";
 
 const MyPlans = () => {
+  const isLoggedIn = true; // Chỉ để test, sau này sẽ lấy từ context AuthContext
+
   const plans = [
     {
       date: "24/05/2025",
@@ -51,7 +53,11 @@ const MyPlans = () => {
 
   return (
     <div className="mt-20">
-      {plans.length > 0 ? <PlansList plans={plans} /> : <NoPlans />}
+      {plans.length > 0 ? (
+        <PlansList plans={plans} />
+      ) : (
+        <NoPlans isLoggedIn={isLoggedIn} />
+      )}
     </div>
   );
 };
