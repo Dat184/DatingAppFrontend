@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Home } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Home } from "lucide-react";
 
 const NotFound = () => {
   return (
@@ -20,7 +20,10 @@ const NotFound = () => {
           <p className="text-lg text-gray-600 mb-8 max-w-md mx-auto">
             Trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển.
           </p>
-          <Link to="/" className="btn btn-primary shadow-md inline-flex items-center px-8 py-3">
+          <Link
+            to="/"
+            className="btn btn-primary shadow-md inline-flex items-center px-8 py-3"
+          >
             <Home className="mr-2 h-5 w-5" />
             Quay về trang chủ
           </Link>
