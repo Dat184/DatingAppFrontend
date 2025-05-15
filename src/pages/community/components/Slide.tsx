@@ -22,7 +22,6 @@ const Slide = () => {
   const fullContent =
     "Tháng 5, Sài Gòn mưa rào, mình cùng nhau đi dạo phố. Những cơn mưa đầu mùa làm không khí dịu mát. Chúng tôi ghé vào một quán cà phê nhỏ trên đường Nguyễn Huệ, nơi có những chiếc ghế gỗ cũ kỹ và những tách cà phê thơm nồng. Tiếng mưa rơi trên mái tôn tạo nên một bản nhạc êm đềm, hòa quyện với tiếng cười nói rộn ràng.";
 
-  // Nội dung rút gọn chỉ hiển thị 100 ký tự đầu tiên
 
   // Định nghĩa các tùy chọn cho dropdown đầu tiên với icon location
   const locationOptions: DropdownOption[] = [
