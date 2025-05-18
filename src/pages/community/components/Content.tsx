@@ -30,7 +30,7 @@ const Content = (props: ContentProps) => {
   } = props;
   const shortContent = fullContent.slice(0, 50) + "...";
   return (
-    <div className="bg-[#D7C6E34D]/30 p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-[1.5rem] md:rounded-[2rem] shadow-lg w-full mx-auto transition-all duration-300">
+    <div className="bg-[#D7C6E34D]/30 p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-[1.5rem] md:rounded-[2rem] shadow-lg max-w-5xl w-full mx-auto transition-all duration-300">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b pb-2 sm:pb-3">
         <div className="flex items-center mb-2 sm:mb-0">
           <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-lavender-300 border-lavender-500 flex items-center justify-center overflow-hidden border-2 mr-2 sm:mr-3 transition-transform duration-300">

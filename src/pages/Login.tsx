@@ -34,17 +34,19 @@ const Login = () => {
           backgroundPosition: "center",
         }}
       />
-      <div className="relative z-10 h-3/4 w-3/5 bg-white/30 flex items-center justify-center rounded-[4.375rem] flex-col ">
-        <h1 className="text-[50px] text-black font-normal">PerfectDate</h1>
-        <span className="text[30px] text-black font-thin ">
+      <div className="relative z-10 w-[90%] md:w-4/5 lg:w-3/5 h-auto sm:h-3/4 py-10 bg-white/30 backdrop-blur-sm flex items-center justify-center rounded-3xl md:rounded-[4.375rem] flex-col px-4">
+        <h1 className="text-3xl sm:text-4xl md:text-[50px] text-black font-normal">
+          PerfectDate
+        </h1>
+        <span className="text-lg sm:text-xl md:text-[30px] text-black font-thin text-center mt-2">
           Less Planning, More Loving
         </span>
         <button
-          className="mt-[2.5rem] h-8 w-[12rem] bg-white flex items-center justify-center gap-1"
+          className="mt-4 sm:mt-6 md:mt-[2.5rem] h-8 sm:h-10 w-full max-w-[12rem] bg-white flex items-center justify-center gap-1 rounded-md hover:bg-gray-100 transition-colors"
           onClick={() => handleLogin()}
         >
-          <img src={IconGoogle} alt="" className="w-5" />
-          <span className="text-[14px] text-black font-thin">
+          <img src={IconGoogle} alt="" className="w-4 sm:w-5" />
+          <span className="text-[12px] sm:text-[14px] text-black font-thin">
             Đăng nhập bằng Google
           </span>
         </button>

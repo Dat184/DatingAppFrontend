@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Slide from "./components/Slide";
-import { useEffect } from "react";
 
 const Community = () => {
   return (
