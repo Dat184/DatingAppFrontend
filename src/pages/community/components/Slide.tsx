@@ -9,8 +9,6 @@ import { IoFilterOutline } from "react-icons/io5";
 import { useState } from "react";
 import Content from "./Content";
 
-// Define the post data interface
-
 const Slide = () => {
   // State để kiểm soát việc hiển thị toàn bộ nội dung hay rút gọn
   const [showFullContent, setShowFullContent] = useState(false);
@@ -46,9 +44,9 @@ const Slide = () => {
   };
 
   return (
-    <section>
+    <section className="w-full">
       <div
-        className="bg-cover bg-center w-full relative flex flex-col items-center justify-center py-12"
+        className="bg-cover bg-center w-full relative flex flex-col items-center justify-center py-6 sm:py-8 md:py-12"
         style={{
           backgroundImage: `url(${BgFeature})`,
           backgroundSize: "cover",
@@ -57,8 +55,8 @@ const Slide = () => {
           minHeight: "fit-content",
         }}
       >
-        {/* thanh filter / dropdonw */}
-        <div className="flex flex-row justify-end mb-4 gap-2.5 w-[90%]">
+        {/* thanh filter / dropdown */}
+        <div className="flex flex-col xs:flex-row justify-end items-center sm:items-end mb-3 sm:mb-4 gap-2 w-[95%] sm:w-[90%] lg:w-[85%] px-2 sm:px-0">
           <DropdownMenu
             options={locationOptions}
             defaultValue={locationOptions[0]}
@@ -72,26 +70,29 @@ const Slide = () => {
           />
         </div>
 
-        <Content
-          showFullContent={showFullContent}
-          setShowFullContent={setShowFullContent}
-          img={img}
-          fullContent={fullContent}
-          name="Thành Đẹt"
-          location="Bình Dương"
-          date="04/05/2025"
-          headerContent="Sài Gòn và mình tui..."
-        />
-        <Content
-          showFullContent={showFullContent}
-          setShowFullContent={setShowFullContent}
-          img={img}
-          fullContent={fullContent}
-          name="Thành Đẹt"
-          location="Bình Dương"
-          date="04/05/2025"
-          headerContent="Sài Gòn và mình tui..."
-        />
+        {/* Content container with improved responsive spacing */}
+        <div className="w-full px-3 sm:px-4 md:px-6 space-y-6 sm:space-y-8 md:space-y-10">
+          <Content
+            showFullContent={showFullContent}
+            setShowFullContent={setShowFullContent}
+            img={img}
+            fullContent={fullContent}
+            name="Thành Đẹt"
+            location="Bình Dương"
+            date="04/05/2025"
+            headerContent="Sài Gòn và mình tui..."
+          />
+          <Content
+            showFullContent={showFullContent}
+            setShowFullContent={setShowFullContent}
+            img={img}
+            fullContent={fullContent}
+            name="Thành Đẹt"
+            location="Bình Dương"
+            date="04/05/2025"
+            headerContent="Sài Gòn và mình tui..."
+          />
+        </div>
       </div>
     </section>
   );
