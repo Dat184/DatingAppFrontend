@@ -19,16 +19,16 @@ const PlansList: React.FC<PlansListProps> = ({ plans }) => {
   const [isNewPlanModalOpen, setIsNewPlanModalOpen] = useState(false);
 
   return (
-    <div className="py-6 px-16">
+    <div className="py-6 px-8 md:px-16">
       <NewPlanModal
         isOpen={isNewPlanModalOpen}
         onClose={() => setIsNewPlanModalOpen(false)}
       />
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-normal">Kế hoạch của tôi</h2>
+        <h2 className="text-xl md:text-2xl font-normal">Kế hoạch của tôi</h2>
         <button
           onClick={() => setIsNewPlanModalOpen(true)}
-          className="flex items-center py-2 px-16 border group border-black rounded-full hover:bg-[#455038] hover:border-[#455038] hover:text-white transition-all duration-300"
+          className="flex items-center text-sm md:text[16px] py-2 px-8 md:py-2 md:px-16 border group border-black rounded-full hover:bg-[#455038] hover:border-[#455038] hover:text-white transition-all duration-300"
         >
           Thêm kế hoạch
           <ArrowRight className="ml-2 h-5 w-5 hidden group-hover:block group-hover:translate-x-1 transition-transform duration-300" />

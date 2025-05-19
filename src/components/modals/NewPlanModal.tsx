@@ -22,40 +22,40 @@ const NewPlanModal = ({ isOpen, onClose }: NewPlanModalProps) => {
         <h2 className="text-2xl text-center mb-6">Tạo kế hoạch hẹn hò</h2>
 
         <form className="space-y-6">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between md:items-center">
             <label className="block text-sm font-medium text-gray-700">
               Tiêu đề
             </label>
             <div className="relative">
               <input
                 type="text"
-                className="w-[300px] px-6 py-2 border border-gray-300 rounded-lg focus:border-transparent placeholder:text-xs placeholder:text-[#B0B0B0]"
+                className="w-full md:w-[300px] px-6 py-2 border border-gray-300 rounded-lg focus:border-transparent placeholder:text-xs placeholder:text-[#B0B0B0]"
                 placeholder="Input here..."
               />
             </div>
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between md:items-center">
             <label className="block text-sm font-medium text-gray-700">
               Mô tả
             </label>
             <div className="relative">
               <input
                 type="text"
-                className="w-[300px] px-6 py-2 border border-gray-300 rounded-lg focus:border-transparent placeholder:text-xs placeholder:text-[#B0B0B0]"
+                className="w-full md:w-[300px] px-6 py-2 border border-gray-300 rounded-lg focus:border-transparent placeholder:text-xs placeholder:text-[#B0B0B0]"
                 placeholder="Input here..."
               />
             </div>
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between md:items-center">
             <label className="block text-sm font-medium text-gray-700">
               Ngày bắt đầu
             </label>
             <div className="relative">
               <input
                 type="text"
-                className="w-[300px] px-6 py-2 border border-gray-300 rounded-lg focus:border-transparent placeholder:text-xs placeholder:text-[#B0B0B0]"
+                className="w-full md:w-[300px] px-6 py-2 border border-gray-300 rounded-lg focus:border-transparent placeholder:text-xs placeholder:text-[#B0B0B0]"
                 placeholder="Input here..."
               />
             </div>
