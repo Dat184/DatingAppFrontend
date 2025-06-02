@@ -11,6 +11,7 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isMyPlansPage = location.pathname === "/ke-hoach-cua-toi";
+  const isPlantDetailsPage = location.pathname === "/ke-hoach-chi-tiet";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -19,7 +20,7 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isMyPlansPage || isScrolled
+        isMyPlansPage || isPlantDetailsPage || isScrolled
           ? "bg-[#455038] shadow-md"
           : "bg-transparent"
       }`}
