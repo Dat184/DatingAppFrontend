@@ -26,6 +26,7 @@ const ConnectPartnerModal: React.FC<ConnectPartnerModalProps> = ({
 
   const handleSubmit = () => {
     if (partnerId.trim() === "123456") {
+      // Giả sử "123456" là ID hợp lệ
       onSuccess();
     } else {
       setHasError(true);
