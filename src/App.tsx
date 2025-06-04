@@ -5,6 +5,7 @@ import LoadingSpinner from "./components/ui/LoadingSpinner";
 import { AuthProvider } from "./contexts/AuthContext";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import PlanDetails from "./pages/PlanDetails/PlanDetails";
+import CreatePlans from "./pages/CreatePlans/CreatePlans";
 // Lazy load pages for better performance
 const Home = lazy(() => import("./pages/Home"));
 const Community = lazy(() => import("./pages/community/Community"));
@@ -24,6 +25,7 @@ function App() {
             <Route path="/cong-dong" element={<Community />} />
             <Route path="/ke-hoach-cua-toi" element={<MyPlans />} />
             <Route path="/ke-hoach-chi-tiet" element={<PlanDetails />}></Route>
+            <Route path="/create-plans" element={<CreatePlans />} />
             {/* <Route path="/lien-he" element={<Contact />} /> */}
 
             <Route

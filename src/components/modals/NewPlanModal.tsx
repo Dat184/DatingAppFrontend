@@ -1,4 +1,5 @@
 import { ArrowRight, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface NewPlanModalProps {
   isOpen: boolean;
@@ -7,6 +8,12 @@ interface NewPlanModalProps {
 
 const NewPlanModal = ({ isOpen, onClose }: NewPlanModalProps) => {
   if (!isOpen) return null;
+  const navigate = useNavigate();
+
+  const handleNext = () => {
+    onClose();
+    navigate("/create-plans");
+  };
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -70,6 +77,7 @@ const NewPlanModal = ({ isOpen, onClose }: NewPlanModalProps) => {
               Huỷ
             </button>
             <button
+              onClick={handleNext}
               type="submit"
               className=" flex items-center gap-1 pl-2 pr-4 py-2 bg-[#2E3A22] group text-white rounded-full transition-colors"
             >
