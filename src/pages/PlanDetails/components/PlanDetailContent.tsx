@@ -1,5 +1,24 @@
 import Bg_PlanDetail from "../../../assets/img/Bg_PlanDetails.jpg";
 
+const planActivities = [
+  {
+    time: "4:30 SA",
+    title: "TP.HCM - Vũng Tàu",
+    description:
+      "Trên đường ghé ăn sáng và nghỉ ngơi ngắm cảnh mất tầm 3 tiếng",
+  },
+  {
+    time: "8:00 SA",
+    title: "Tắm biển",
+    description: "Tắm biển và chơi thể thao bãi biển tại Bãi Sau",
+  },
+  {
+    time: "12:00 SA",
+    title: "Ăn trưa",
+    description: "Thưởng thức hải sản tại Gành Hào",
+  },
+];
+
 export default function PlanDetailContent() {
   return (
     <section>
@@ -8,60 +27,32 @@ export default function PlanDetailContent() {
           <h1 className="-rotate-90 text-4xl p-2 ">24/05/2025</h1>
         </div>
         <div>
-          <div className="flex flex-row justify-start w-fit h-fit p-4 text-black mt-8 mb-16">
-            <div className="flex flex-col items-center justify-center mr-8 ">
-              <p className="text-[#455038] text-3xl font-semibold">4:30 SA</p>
-            </div>
-            <div className="pl-6 border-l-2  border-[#455038]">
-              <p className="text-2xl ">TP.HCM - Vũng Tàu</p>
-              <p className="text-xl mt-4">
-                Trên đường ghé ăn sáng và nghỉ ngơi ngắm cảnh mất tầm 3 tiếng
-              </p>
-            </div>
+          <div>
+            {planActivities.map((activity, index) => (
+              <div
+                key={index}
+                className="flex flex-row justify-start w-fit h-fit p-4 text-black my-8"
+              >
+                <div className="flex flex-col items-center justify-center w-32 mr-8 ">
+                  <p className="text-[#455038] text-3xl font-semibold">
+                    {activity.time}
+                  </p>
+                </div>
+                <div className="pl-6 border-l-2  border-[#455038]">
+                  <p className="text-2xl ">{activity.title}</p>
+                  <p className="text-xl mt-4">{activity.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="flex flex-row justify-start w-fit h-fit p-4 text-black mt-8 mb-16">
-            <div className="flex flex-col items-center justify-center mr-8 ">
-              <p className="text-[#455038] text-3xl font-semibold">4:30 SA</p>
-            </div>
-            <div className="pl-6 border-l-2  border-[#455038]">
-              <p className="text-2xl ">TP.HCM - Vũng Tàu</p>
-              <p className="text-xl mt-4">
-                Trên đường ghé ăn sáng và nghỉ ngơi ngắm cảnh mất tầm 3 tiếng
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-row justify-start w-fit h-fit p-4 text-black mt-8 mb-16">
-            <div className="flex flex-col items-center justify-center mr-8 ">
-              <p className="text-[#455038] text-3xl font-semibold">4:30 SA</p>
-            </div>
-            <div className="pl-6 border-l-2  border-[#455038]">
-              <p className="text-2xl ">TP.HCM - Vũng Tàu</p>
-              <p className="text-xl mt-4">
-                Trên đường ghé ăn sáng và nghỉ ngơi ngắm cảnh mất tầm 3 tiếng
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-row justify-start w-fit h-fit p-4 text-black mt-8 mb-16">
-            <div className="flex flex-col items-center justify-center mr-8 ">
-              <p className="text-[#455038] text-3xl font-semibold">4:30 SA</p>
-            </div>
-            <div className="pl-6 border-l-2  border-[#455038]">
-              <p className="text-2xl ">TP.HCM - Vũng Tàu</p>
-              <p className="text-xl mt-4">
-                Trên đường ghé ăn sáng và nghỉ ngơi ngắm cảnh mất tầm 3 tiếng
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-row justify-start w-fit h-fit p-4 text-black mt-8 mb-16">
-            <div className="flex flex-col items-center justify-center mr-8 ">
-              <p className="text-[#455038] text-3xl font-semibold">4:30 SA</p>
-            </div>
-            <div className="pl-6 border-l-2  border-[#455038]">
-              <p className="text-2xl ">TP.HCM - Vũng Tàu</p>
-              <p className="text-xl mt-4">
-                Trên đường ghé ăn sáng và nghỉ ngơi ngắm cảnh mất tầm 3 tiếng
-              </p>
-            </div>
+
+          <div className="ml-4 mb-5">
+            <p className="text-black text-base">
+              <span className="text-[#2E3A22] underline text-xl pr-1">
+                Ghi chú:
+              </span>
+              Mang theo đồ bơi, kem chống nắng, mũ, kính mát.
+            </p>
           </div>
         </div>
         <div className="w-[500px] bg-[#000000] self-stretch">

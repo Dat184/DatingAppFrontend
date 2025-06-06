@@ -13,6 +13,7 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
   const isMyPlansPage = location.pathname === "/ke-hoach-cua-toi";
   const isPlantDetailsPage = location.pathname === "/ke-hoach-chi-tiet";
   const isCreatePlansPage = location.pathname === "/create-plans";
+  const isProfilePage = location.pathname === "/ca-nhan";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,13 +22,17 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isMyPlansPage || isPlantDetailsPage || isCreatePlansPage || isScrolled
+        isMyPlansPage ||
+        isPlantDetailsPage ||
+        isCreatePlansPage ||
+        isProfilePage ||
+        isScrolled
           ? "bg-[#455038] shadow-md"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto border-b">
-        <nav className="flex items-center justify-between">
+        <nav className="flex max-h-[84px] items-center justify-between">
           {/* Mobile Menu Button */}
           <button
             className="md:hidden flex items-center justify-center px-4 py-4 text-white"
@@ -37,7 +42,7 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
           {/* Left Navigation */}
-          <div className="hidden md:flex items-center text-center flex-1">
+          <div className="h-full hidden md:flex items-center text-center flex-1">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -78,14 +83,14 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
               Kế hoạch của tôi
             </NavLink>
             <NavLink
-              to="/lien-he"
+              to="/ca-nhan"
               className={({ isActive }) =>
                 `px-8 py-7 border-l flex-1 text-xl border-white ${
                   isActive ? "text-white" : "text-white/90 hover:text-white"
                 }`
               }
             >
-              Liên hệ
+              Cá nhân
             </NavLink>
           </div>{" "}
         </nav>
@@ -129,7 +134,7 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
               Kế hoạch của tôi
             </NavLink>
             <NavLink
-              to="/lien-he"
+              to="/ca-nhan"
               className={({ isActive }) =>
                 `w-full text-center py-4 text-lg ${
                   isActive ? "text-white" : "text-white/90 hover:text-white"
@@ -137,7 +142,7 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Liên hệ
+              Cá nhân
             </NavLink>
           </div>
         </div>

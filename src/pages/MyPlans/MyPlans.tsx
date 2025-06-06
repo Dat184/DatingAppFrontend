@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PlansList from "./components/PlansList";
 import NoPlans from "./components/NoPlans";
+import Notification from "../../components/modals/Notification";
 
 const MyPlans = () => {
   const isLoggedIn = true; // Chỉ để test, sau này sẽ lấy từ context AuthContext
@@ -58,6 +59,8 @@ const MyPlans = () => {
       ) : (
         <NoPlans isLoggedIn={isLoggedIn} />
       )}
+
+      <Notification />
     </div>
   );
 };

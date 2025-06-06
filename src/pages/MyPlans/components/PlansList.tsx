@@ -5,6 +5,7 @@ import BgHover from "../../../assets/img/Bg_hover.png";
 import NewPlanModal from "../../../components/modals/NewPlanModal";
 import MoreIcon from "../../../assets/img/more_vert.png";
 import DeleteConfirmModal from "../../../components/modals/DeleteConfirmModal";
+import { useNavigate } from "react-router-dom";
 
 type Plan = {
   date: string;
@@ -22,7 +23,10 @@ const PlansList: React.FC<PlansListProps> = ({ plans }) => {
   const [isNewPlanModalOpen, setIsNewPlanModalOpen] = useState(false);
   const [openedIndex, setOpenedIndex] = useState<number | null>(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-
+  const navigate = useNavigate();
+  const handlePlanClick = (index: number) => {
+    navigate("/ke-hoach-chi-tiet", { state: { plan: plans[index] } });
+  };
   const handleDelete = () => {
     setShowDeleteModal(false);
     setOpenedIndex(null);
@@ -48,6 +52,7 @@ const PlansList: React.FC<PlansListProps> = ({ plans }) => {
         {plans.map((plan, index) => (
           <motion.div
             key={index}
+            onClick={() => handlePlanClick(index)}
             className="w-[380px] max-h-[280px] bg-white rounded-3xl border-2 border-dashed border-[#2E3A22] shadow-md pb-12 pt-4 px-6 hover:shadow-lg transition-shadow cursor-pointer"
             style={{
               backgroundImage:
