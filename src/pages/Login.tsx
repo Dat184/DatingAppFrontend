@@ -3,17 +3,21 @@ import BgLogin from "../assets/img/Bg_Login.jpg";
 import IconGoogle from "../assets/img/Icon_Google.png";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import { loginUserByGoogle } from "../store/api/apiRequestAuth";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const handleLogin = useGoogleLogin({
     onSuccess: async (credentialResponse) => {
       try {
         const res = await axios.get(
           `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${credentialResponse.access_token}`
         );
-        console.log(res.data);
+        // dòng dưới là để xem dữ liệu trả về từ Google (name, email, picture, v.v.)
+        // console.log(res.data);
+        loginUserByGoogle(credentialResponse.access_token, dispatch, navigate);
         navigate("/");
       } catch (error) {
         console.error("Error fetching user data:", error);
