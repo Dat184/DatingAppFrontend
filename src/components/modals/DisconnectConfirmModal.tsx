@@ -10,7 +10,7 @@ const DisconnectConfirmModal = ({
   isOpen: boolean;
   onClose: () => void;
   onDisconnect: () => void;
-  partnerName: string;
+  partnerName: string | undefined;
 }) => {
   if (!isOpen) return null;
 

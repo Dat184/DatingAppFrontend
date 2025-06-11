@@ -1,13 +1,34 @@
 import { ArrowRight } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BgProfile from "../../assets/img/Bg_User.png";
 import DisconnectConfirmModal from "../../components/modals/DisconnectConfirmModal";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getMyInfo } from "../../store/api/apiRequestUser";
 
 const Profile = () => {
-  const [email, setEmail] = useState("tranminhtri@gmail.com");
-  const [inviteCode, setInviteCode] = useState("12344fgh");
-  const [partner, setPartner] = useState("Trần Minh Trí");
+  const [email, setEmail] = useState();
+  const [inviteCode, setInviteCode] = useState();
+  const [partner, setPartner] = useState();
   const [showDisconnectModal, setShowDisconnectModal] = useState(false);
+  const currentUser = useSelector((state: any) => state.auth.login.currentUser);
+  const myInfo = useSelector((state: any) => state.user.getMyInfo.data);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!currentUser) {
+      navigate("/dang-nhap");
+    }
+    getMyInfo(dispatch);
+  }, [dispatch, currentUser]);
+  useEffect(() => {
+    if (myInfo && myInfo.result) {
+      setEmail(myInfo.result.user_email || "Chưa có email");
+      setInviteCode(myInfo.result.user_code || "Chưa có mã mời");
+      setPartner(myInfo.result.your_partner.user_name || "Chưa kết nối");
+    }
+  }, [myInfo, dispatch]);
 
   const handleDisconnect = () => {
     setShowDisconnectModal(false);

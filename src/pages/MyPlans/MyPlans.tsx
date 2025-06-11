@@ -1,56 +1,40 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PlansList from "./components/PlansList";
 import NoPlans from "./components/NoPlans";
 import Notification from "../../components/modals/Notification";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getPlanList } from "../../store/api/apiRequestPlan";
 
 const MyPlans = () => {
-  const isLoggedIn = true; // Chỉ để test, sau này sẽ lấy từ context AuthContext
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>();
+  const currentUser = useSelector((state: any) => state.auth.login.currentUser);
+  const myInfo = useSelector((state: any) => state.user.getMyInfo.data);
+  const planList = useSelector((state: any) => state.plan.planList.data);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const plans = [
-    {
-      date: "24/05/2025",
-      title: "Lịch trình Vũng Tàu nè!",
-      description:
-        "Mong rằng lịch trình này sẽ khiến cậu vui và hạnh phúc khi ở Vũng Tàu",
-      author: "Qnhu nè",
-    },
-    {
-      date: "24/05/2025",
-      title: "Lịch trình Vũng Tàu nè!",
-      description:
-        "Mong rằng lịch trình này sẽ khiến cậu vui và hạnh phúc khi ở Vũng Tàu",
-      author: "Qnhu nè",
-    },
-    {
-      date: "24/05/2025",
-      title: "Lịch trình Vũng Tàu nè!",
-      description:
-        "Mong rằng lịch trình này sẽ khiến cậu vui và hạnh phúc khi ở Vũng Tàu",
-      author: "Qnhu nè",
-    },
-    {
-      date: "24/05/2025",
-      title: "Lịch trình Vũng Tàu nè!",
-      description:
-        "Mong rằng lịch trình này sẽ khiến cậu vui và hạnh phúc khi ở Vũng Tàu",
-      author: "Qnhu nè",
-    },
-    {
-      date: "24/05/2025",
-      title: "Lịch trình Vũng Tàu nè!",
-      description:
-        "Mong rằng lịch trình này sẽ khiến cậu vui và hạnh phúc khi ở Vũng Tàu",
-      author: "Qnhu nè",
-    },
-    {
-      date: "24/05/2025",
-      title: "Lịch trình Vũng Tàu nè!",
-      description:
-        "Mong rằng lịch trình này sẽ khiến cậu vui và hạnh phúc khi ở Vũng Tàu",
-      author: "Qnhu nè",
-    },
-    // ... thêm kế hoạch khác
-  ];
+  useEffect(() => {
+    if (!currentUser) {
+      navigate("/dang-nhap");
+    }
+    setIsLoggedIn(true);
+    getPlanList(dispatch);
+  }, [dispatch, currentUser, navigate]);
+
+  useEffect(() => {
+    if (myInfo && myInfo.result) {
+      getPlanList(dispatch);
+    }
+  }, [myInfo, dispatch]);
+
+  const plans =
+    planList?.result?.map((plan: any) => ({
+      date: new Date(plan.startDate).toLocaleDateString("vi-VN"),
+      title: plan.title,
+      description: plan.description,
+      author: plan.createdBy.user_name,
+    })) || [];
 
   return (
     <div className="mt-20">

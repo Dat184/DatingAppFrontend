@@ -10,9 +10,6 @@ import { useState } from "react";
 import Content from "./Content";
 
 const Slide = () => {
-  // State để kiểm soát việc hiển thị toàn bộ nội dung hay rút gọn
-  const [showFullContent, setShowFullContent] = useState(false);
-
   // Định nghĩa nội dung đầy đủ của bài viết
   const fullContent =
     "Tháng 5, Sài Gòn mưa rào, mình cùng nhau đi dạo phố. Những cơn mưa đầu mùa làm không khí dịu mát. Chúng tôi ghé vào một quán cà phê nhỏ trên đường Nguyễn Huệ, nơi có những chiếc ghế gỗ cũ kỹ và những tách cà phê thơm nồng. Tiếng mưa rơi trên mái tôn tạo nên một bản nhạc êm đềm, hòa quyện với tiếng cười nói rộn ràng.";
@@ -73,8 +70,6 @@ const Slide = () => {
         {/* Content container with improved responsive spacing */}
         <div className="w-full px-3 sm:px-4 md:px-6 space-y-6 sm:space-y-8 md:space-y-10">
           <Content
-            showFullContent={showFullContent}
-            setShowFullContent={setShowFullContent}
             img={img}
             fullContent={fullContent}
             name="Thành Đẹt"
@@ -83,8 +78,6 @@ const Slide = () => {
             headerContent="Sài Gòn và mình tui..."
           />
           <Content
-            showFullContent={showFullContent}
-            setShowFullContent={setShowFullContent}
             img={img}
             fullContent={fullContent}
             name="Thành Đẹt"

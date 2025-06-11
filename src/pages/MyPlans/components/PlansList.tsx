@@ -8,10 +8,22 @@ import DeleteConfirmModal from "../../../components/modals/DeleteConfirmModal";
 import { useNavigate } from "react-router-dom";
 
 type Plan = {
+  id: string;
   date: string;
   title: string;
   description: string;
   author: string;
+  isPublic: boolean;
+  createdBy: {
+    user_email: string;
+    user_name: string;
+  };
+  partnerId: {
+    user_email: string;
+    user_name: string;
+  };
+  createdAt: string;
+  updatedAt: string;
 };
 
 type PlansListProps = {

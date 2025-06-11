@@ -6,7 +6,7 @@ import SuccessModal from "./SuccessModal";
 import NewPlanModal from "../../../components/modals/NewPlanModal";
 
 type NoPlansProps = {
-  isLoggedIn: boolean;
+  isLoggedIn: boolean | undefined;
 };
 
 const NoPlans: React.FC<NoPlansProps> = ({ isLoggedIn }) => {

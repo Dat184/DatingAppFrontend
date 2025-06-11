@@ -1,9 +1,9 @@
-import axios from "axios";
 import {
   loginFailure,
   loginStart,
   loginSuccess,
   logoutFailure,
+  logoutStart,
   logoutSuccess,
 } from "../slice/authSlice";
 import axiosInstance from "../../axios/axios.interceptor";
@@ -13,8 +13,8 @@ export const loginUserByGoogle = async (
   dispatch: any,
   navigate: any
 ) => {
+  dispatch(loginStart());
   try {
-    console.log("API: ", axiosInstance.defaults.baseURL);
     const res = await axiosInstance.post(`/api/v1/auth/google/login`, {
       idToken: token,
     });
@@ -29,6 +29,7 @@ export const loginUserByGoogle = async (
 };
 
 export const logoutUser = async (dispatch: any, navigate: any) => {
+  dispatch(logoutStart());
   try {
     dispatch(logoutSuccess());
     navigate("/dang-nhap");

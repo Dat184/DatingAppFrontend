@@ -3,10 +3,9 @@ import axios from "axios";
 import { store } from "../store/store";
 import { loginSuccess, logoutSuccess } from "../store/slice/authSlice";
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.REACT_APP_API_URL,
+  baseURL: import.meta.env.VITE_API_URL,
   withCredentials: true,
 });
-
 const refreshAccessToken = async () => {
   try {
     const response = await axios.post(
