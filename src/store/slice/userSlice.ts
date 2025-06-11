@@ -5,17 +5,17 @@ const userSlice = createSlice({
   name: "user",
   initialState: {
     getUserById: {
-      currentUser: null,
+      data: null,
       isFetching: false,
       error: false,
     },
     getMyInfo: {
-      currentUser: null,
+      data: null,
       isFetching: false,
       error: false,
     },
     updateInfo: {
-      currentUser: null,
+      data: null,
       isFetching: false,
       error: false,
     },
@@ -42,7 +42,7 @@ const userSlice = createSlice({
     },
     getUserByIdSuccess(state, action) {
       state.getUserById.isFetching = false;
-      state.getUserById.currentUser = action.payload;
+      state.getUserById.data = action.payload;
       state.getUserById.error = false;
     },
     getUserByIdFailure(state) {
@@ -56,7 +56,7 @@ const userSlice = createSlice({
     },
     updateInfoSuccess(state, action) {
       state.updateInfo.isFetching = false;
-      state.updateInfo.currentUser = action.payload;
+      state.updateInfo.data = action.payload;
       state.updateInfo.error = false;
     },
     updateInfoFailure(state) {
@@ -111,7 +111,7 @@ const userSlice = createSlice({
     },
     getMyInfoSuccess(state, action) {
       state.getMyInfo.isFetching = false;
-      state.getMyInfo.currentUser = action.payload;
+      state.getMyInfo.data = action.payload;
       state.getMyInfo.error = false;
     },
     getMyInfoFailure(state) {

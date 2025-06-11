@@ -15,7 +15,6 @@ export const loginUserByGoogle = async (
 ) => {
   dispatch(loginStart());
   try {
-    console.log("API: ", axiosInstance.defaults.baseURL);
     const res = await axiosInstance.post(`/api/v1/auth/google/login`, {
       idToken: token,
     });

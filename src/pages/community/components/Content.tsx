@@ -3,8 +3,6 @@ import { IoBookmark, IoBookmarkOutline } from "react-icons/io5";
 import { MdOutlinePerson } from "react-icons/md";
 
 interface ContentProps {
-  showFullContent: boolean;
-  setShowFullContent: (show: boolean) => void;
   img: string;
   fullContent: string;
   name?: string;
@@ -15,19 +13,11 @@ interface ContentProps {
 
 const Content = (props: ContentProps) => {
   const [bookmark, setBookmark] = React.useState(false);
+  const [showFullContent, setShowFullContent] = React.useState(false);
   const handleBookmarkClick = () => {
     setBookmark(!bookmark);
   };
-  const {
-    showFullContent,
-    setShowFullContent,
-    img,
-    fullContent,
-    name,
-    location,
-    date,
-    headerContent,
-  } = props;
+  const { img, fullContent, name, location, date, headerContent } = props;
   const shortContent = fullContent.slice(0, 50) + "...";
   return (
     <div className="bg-[#D7C6E34D]/30 p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-[1.5rem] md:rounded-[2rem] shadow-lg max-w-5xl w-full mx-auto transition-all duration-300">

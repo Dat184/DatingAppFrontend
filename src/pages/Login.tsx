@@ -1,32 +1,28 @@
 import { useNavigate } from "react-router-dom";
 import BgLogin from "../assets/img/Bg_Login.jpg";
 import IconGoogle from "../assets/img/Icon_Google.png";
-import { useGoogleLogin } from "@react-oauth/google";
-import axios from "axios";
+import { GoogleLogin } from "@react-oauth/google";
 import { loginUserByGoogle } from "../store/api/apiRequestAuth";
 import { useDispatch } from "react-redux";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleLogin = useGoogleLogin({
-    onSuccess: async (credentialResponse) => {
-      try {
-        const res = await axios.get(
-          `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${credentialResponse.access_token}`
-        );
-        // dòng dưới là để xem dữ liệu trả về từ Google (name, email, picture, v.v.)
-        // console.log(res.data);
-        loginUserByGoogle(credentialResponse.access_token, dispatch, navigate);
-        navigate("/");
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    },
-    onError: (error) => {
-      console.error("Login Failed:", error);
-    },
-  });
+
+  const handleGoogleSuccess = async (credentialResponse: any) => {
+    try {
+      // Gửi ID Token đến backend
+      const idToken = credentialResponse.credential;
+      console.log(idToken);
+      await loginUserByGoogle(idToken, dispatch, navigate);
+    } catch (error) {
+      console.error("Error during Google login:", error);
+    }
+  };
+
+  const handleGoogleError = () => {
+    console.error("Google Login Failed");
+  };
 
   return (
     <section className="h-screen relative flex items-center justify-center overflow-hidden">
@@ -41,19 +37,23 @@ const Login = () => {
       <div className="relative z-10 w-[90%] md:w-4/5 lg:w-3/5 h-auto sm:h-3/4 py-10 bg-white/30 backdrop-blur-sm flex items-center justify-center rounded-3xl md:rounded-[4.375rem] flex-col px-4">
         <h1 className="text-3xl sm:text-4xl md:text-[50px] text-black font-normal">
           PerfectDate
-        </h1>
+        </h1>{" "}
         <span className="text-lg sm:text-xl md:text-[30px] text-black font-thin text-center mt-2">
           Less Planning, More Loving
         </span>
-        <button
-          className="mt-4 sm:mt-6 md:mt-[2.5rem] h-8 sm:h-10 w-full max-w-[12rem] bg-white flex items-center justify-center gap-1 rounded-md hover:bg-gray-100 transition-colors"
-          onClick={() => handleLogin()}
-        >
-          <img src={IconGoogle} alt="" className="w-4 sm:w-5" />
-          <span className="text-[12px] sm:text-[14px] text-black font-thin">
-            Đăng nhập bằng Google
-          </span>
-        </button>
+        {/* Custom Button Wrapper for GoogleLogin */}
+        <div className="mt-4 sm:mt-6 md:mt-[2.5rem]">
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={handleGoogleError}
+            useOneTap={false}
+            theme="outline"
+            size="large"
+            text="signin_with"
+            shape="rectangular"
+            logo_alignment="left"
+          />
+        </div>
       </div>
     </section>
   );
