@@ -21,7 +21,7 @@ const Profile = () => {
       navigate("/dang-nhap");
     }
     getMyInfo(dispatch);
-  }, [dispatch, currentUser]);
+  }, []);
   useEffect(() => {
     if (myInfo && myInfo.result) {
       setEmail(myInfo.result.user_email || "Chưa có email");

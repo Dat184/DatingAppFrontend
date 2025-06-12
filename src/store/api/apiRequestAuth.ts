@@ -17,6 +17,8 @@ export const loginUserByGoogle = async (
   try {
     const res = await axiosInstance.post(`/api/v1/auth/google/login`, {
       idToken: token,
+    }, {
+      withCredentials: true, // Bật để gửi cookie
     });
     dispatch(loginSuccess(res.data));
     navigate("/");
